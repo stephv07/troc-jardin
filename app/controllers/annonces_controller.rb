@@ -16,7 +16,7 @@ class AnnoncesController < ApplicationController
   	end	
 
 	def index
-		@annonces = Annonce.last(3).reverse
+		@annonces = Annonce.last(3)#.reverse
 	end
 
 	def show
