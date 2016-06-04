@@ -6,5 +6,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-codes_postaux_et_communes.create(NomMinPoste: 'Paris', CodePostal: '75001')
-codes_postaux_et_communes.create(NomMinPoste: 'Paris', CodePostal: '75002')
+CodesPostauxEtCommunes.create(NomMinPoste: 'Lamastre', CodePostal: '07270')
+CodesPostauxEtCommunes.create(NomMinPoste: 'Empurany', CodePostal: '07270')
