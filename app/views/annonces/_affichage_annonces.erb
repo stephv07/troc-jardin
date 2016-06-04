@@ -1,0 +1,17 @@
+<h3>Les trois dernières annonces deposées</h3>
+<div class="dernieres_annonces">
+<% @annonces.each do |annonce| %>
+	<div class="classement">
+		<div class="code_postale">
+		<%= annonce.code_postal %>
+		</div>
+		<%= annonce.categorie %><br>
+		<div class="titre_annonce">
+			<%= annonce.titre %>
+		</div>
+		<%= annonce.adresse %><br>
+		<%= annonce.quantite %><br>
+		<%= annonce.commentaire %><br>
+	</div>
+<% end %>
+</div>

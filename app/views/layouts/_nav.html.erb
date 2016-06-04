@@ -1,0 +1,29 @@
+<nav class= "navbar">
+	<ul>
+		<li>
+			<%= link_to image_tag("pom1.svg"), annonces_path %>
+		</li>
+		<li class="menu">
+			<%= link_to 'Proposez quelque chose', new_annonce_path %>
+		</li>
+		<div class="search">
+			<li class="menu"><a href="#"><%= image_tag ("hamburg2.svg") %><p>Recherche</p></a>
+				<ul>
+					<%= form_tag '/result', :method => 'get' do %>
+						<li>
+							<%= label_tag :"Quoi ?" %>
+							<%= select_tag :search,options_for_select([ "Tout", "Fruits", "Légumes", "Autres" ], params[:search]) %>
+						</li>
+						<li>
+							<%= label_tag :"Où ?" %>
+							<%= text_field_tag :code_postal, params[:code_postal], placeholder: 'code postal ou n°dépt' %>
+						</li>
+						<li>
+							<%= submit_tag "Chercher", :name => nil, :class =>'btn_search' %>
+						</li>
+					<% end %>
+				</ul>
+			</li>
+		</div>
+	</ul>
+</nav>	

@@ -1,0 +1,36 @@
+.affichage{
+	margin-left: 2%;
+}
+
+.form_annonce {
+	display: flex;
+	flex-direction: column;
+}
+
+.input_select {
+	width: 10%;
+	margin-bottom: 1%;
+	box-shadow: 1px 1px 12px #555;
+}
+.input_select_date {
+	width: 5%;
+	margin-bottom: 1%;
+	box-shadow: 1px 1px 12px #555;
+}
+
+.input_form {
+	border: 1px solid #70C63F;
+	width: 50%;
+	background-color: #C5EFF7;
+	margin-bottom: 1%;
+	box-shadow: 1px 1px 12px #555;
+}
+
+.validation {
+	font-size: 1em;
+	padding: 1%;
+	border: 2px solid #C5EFF7;
+	border-radius: 10%;
+	box-shadow: 1px 1px 12px #555;
+}
+

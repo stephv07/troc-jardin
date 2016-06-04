@@ -1,0 +1,31 @@
+<%= render "layouts/nav" %>
+<div class="result_annonces">
+	<h2>Annonce</h2>
+	<div class="classement_result">
+		<div class="titre_annonce">
+			<%= @annonce.titre %><br>
+		</div>
+		<p>Quantité : <%= @annonce.quantite %></p>
+		<p>Date de disponibilité : <%= @annonce.dispo.strftime('%d/%m/%y') %></p><br>
+		<p><%= @annonce.commentaire %></p><br>
+		<%= @annonce.adresse %><br>
+		<div class="code_postale">
+			<%= @annonce.code_postal %>
+			<%= @annonce.img %>
+		</div><br>	
+		<% if flash[:notice] %>
+			<h2><%= flash[:notice] %></h2><br>
+			<button>
+				<a class="liens" href="/annonces"><h3>Retour à l'accueil</h3></a>
+			</button>
+		<% else %>
+			<button>
+				<a class="liens" href="javascript:history.back()"><h3>Retour à votre recherche</h3></a>
+			</button>
+		<% end %>
+	</div>
+</div>
+
+
+
+

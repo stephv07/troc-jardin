@@ -1,0 +1,56 @@
+<%= render "layouts/nav" %>
+<% ville_canton = [] %>
+<div class="affichage">
+	<h2>Nouvelle annonce</h2>
+		
+		<%= form_for :annonce, url: annonces_path  do |f| %>
+			    <div class="form_annonce">
+			    	<%= f.label :catégorie %>
+			    	<%= f.select( :categorie, ['Fruits', "Légumes", "Autres"], {}, { :class => 'input_select' }) %>
+			    </div>
+			    <div class="form_annonce">
+			    	<%= f.label :"titre :" %>
+			    	<%= f.text_field :titre, :class =>"input_form"%>
+			    </div>
+			    <div class="form_annonce">
+			    	<%= f.label :"code postal :" %>
+			    	<%= f.text_field :code_postal, :class =>'input_form' %>
+			    </div>
+
+				<% recup_cp = "" %>
+			    	<% @villes.each do |ville| %>
+					<% recup_cp = f.text_field :code_postal  %>
+			    		<% if ville.CodePostal == "'"+ recup_cp[26,5]+"'" %>
+			    			<% ville_canton << ville.NomMinPoste[1..ville.NomMinPoste.length-2] %>	
+			    		<% end %>
+			    	<% end %>
+
+			    <div class="form_annonce">
+			    	<%= f.label :ville %>
+			    	<%= f.select( :img, ville_canton, {}, { :class => 'input_select' }) %>
+			    </div>
+
+			    <div class="form_annonce">
+			    	<%= f.label :"adresse e-mail :" %>
+			    	<%= f.text_field :adresse, :class =>"input_form" %>
+			    </div>
+			    <div class="form_annonce">
+			    	<%= f.label :"quantité :" %>
+			    	<%= f.text_field :quantite, :class =>"input_form" %>
+			    </div>
+			    <div class="form_annonce">
+			    	<%= f.label :"commentaire :" %>
+			    	<%= f.text_area :commentaire, :class =>"input_form" %>
+			    </div>
+			    <div class="form_annonce">
+			    	<%= f.label :"date de disponibilité :" %>
+			    	<div>
+			    	<%= f.date_select :dispo, {:order => [:day, :month, :year], :use_month_names => [t(:Janvier), t(:Février), t(:Mars), t(:Avril), t(:Mai), t(:Juin), t(:Juillet), t(:Août), t(:Septembre), t(:Octobre), t(:Novembre), t(:Décembre)]}, {:class => 'input_select_date' } %>
+			    	</div>
+			    </div>
+			    <div>
+			    	<%= f.submit 'Valider', :class =>"validation" %>
+			    </div>	
+		<% end %>
+</div>
+

@@ -1,0 +1,46 @@
+<%= render "layouts/nav" %>
+
+
+<div class="result_annonces">
+	<% if @annonces.blank? %>
+		<h3>Aucune annonce correspondante</h3><br>
+	<% end %>
+	<% @annonces.each do |annonces| %>
+			<div class="classement_result">
+				<div class="titre_annonce">
+					<%= link_to annonce_path(annonces.id), class: "liens"  do %>
+					<%= annonces.titre %>
+				</div>
+					<%= label_tag :"Quantité :" %>
+					<%= annonces.quantite %><br>
+					<%= label_tag :"Date de disponibilité :" %>
+					<%= annonces.dispo.strftime('%d/%m/%y') %>
+					<div class="code_postale">
+						<%= annonces.code_postal %>
+						<%= annonces.img %>
+					</div>
+			</div>
+		<% end %>
+	<% end %>
+
+	<% if @autres_categories.present? %>
+		<h3>Les autres offres de la région</h3>
+		<% @autres_categories.each do |annonces| %>
+				<div class="classement_result">
+					<div class="titre_annonce">
+						<%= link_to annonce_path(annonces.id), class: "liens"  do %>
+						<%= annonces.titre %>
+					</div>
+					<%= label_tag :"Quantité :" %>
+					<%= annonces.quantite %><br>
+					<%= label_tag :"Date de disponibilité :" %>
+					<%= annonces.dispo.strftime('%d/%m/%y') %>
+					<div class="code_postale">
+						<%= annonces.code_postal %>
+						<%= annonces.img %>
+					</div>
+				</div>
+			<% end %>
+		<% end %>
+	<% end %>
+</div>

@@ -1,0 +1,28 @@
+.dernieres_annonces{
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.classement {
+	margin: 15px;
+	padding: 5px;
+	width: 33%;
+	background-color: #6AB0E1;
+	box-shadow: 1px 1px 12px #555;
+	text-align: justify;
+	line-height: 150%;
+}
+
+.classement:hover {
+	transform: scale(1.05)
+}
+
+.titre_annonce {
+	font-family: 'Raleway-SemiBold';
+}
+
+.code_postale {
+	float: right;
+}
+

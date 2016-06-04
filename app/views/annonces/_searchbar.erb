@@ -1,0 +1,16 @@
+<h2>Cherchez quelque chose</h2>	
+<div class="align_right">
+	<%= form_tag '/result', :method => 'get' do %>
+		<div>
+			<%= label_tag :"Quoi ?" %>
+	    	<%= select_tag :search,options_for_select([ "Tout", "Fruits", "Légumes", "Autres" ], params[:search]), :class =>"btn_search" %>
+	    	</div>
+	    	<div>
+	    	<%= label_tag :"Où ?" %>
+	    	<%= text_field_tag :code_postal, params[:code_postal], placeholder: 'code postal ou n°départ', :class =>"btn_search" %>
+		</div>
+		<div>
+			<%= submit_tag "Chercher", :name => nil, :class => 'btn_search' %>
+		</div>
+	<% end %>
+</div>
