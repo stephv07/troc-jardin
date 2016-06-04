@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.2.4'
+
 gem 'rubygems-update', '~> 2.2', '>= 2.2.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
@@ -47,5 +48,9 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-gem 'pg', group: :production
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
+end
+
 
