@@ -14,7 +14,7 @@ class Annonce < ActiveRecord::Base
 						SELECT * 
 						FROM annonces 
 						WHERE annonces.code_postal LIKE '#{code_postal}%' 
-						ORDER BY annonces.dispo ASC")
+						ORDER BY annonces.dispo DESC")
 				end
 			end
 		else
@@ -28,7 +28,7 @@ class Annonce < ActiveRecord::Base
 						SELECT * 
 						FROM annonces 
 						WHERE annonces.code_postal LIKE '#{code_postal}%' AND annonces.categorie = '#{cat}'
-						ORDER BY annonces.dispo ASC")
+						ORDER BY annonces.dispo DESC")
 				end
 			end			
 		end
@@ -49,13 +49,13 @@ class Annonce < ActiveRecord::Base
 					SELECT * 
 					FROM annonces 
 					WHERE annonces.code_postal = '#{code_postal}' AND annonces.categorie != '#{cat}' 
-					ORDER BY annonces.dispo ASC")
+					ORDER BY annonces.dispo DESC")
 			else
 				Annonce.find_by_sql("
 					SELECT * 
 					FROM annonces 
 					WHERE annonces.code_postal LIKE '#{code_postal}%' AND annonces.categorie != '#{cat}' 
-					ORDER BY annonces.dispo ASC")
+					ORDER BY annonces.dispo DESC")
 			end
 		end
 	end
