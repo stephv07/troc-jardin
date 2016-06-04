@@ -5,10 +5,10 @@ class Annonce < ActiveRecord::Base
 	def self.search(cat, code_postal)
 		if is_tout?(cat)
 			if is_partout?(code_postal)
-				all.order(dispo: :asc)
+				all.order(dispo: :desc)
 			else
 				if code_postal.length == 5
-					where(code_postal: code_postal).order(dispo: :asc)
+					where(code_postal: code_postal).order(dispo: :desc)
 				else
 					Annonce.find_by_sql("
 						SELECT * 
@@ -19,10 +19,10 @@ class Annonce < ActiveRecord::Base
 			end
 		else
 			if is_partout?(code_postal)
-				where(categorie: cat).order(dispo: :asc)
+				where(categorie: cat).order(dispo: :desc)
 			else
 				if code_postal.length == 5
-					where(categorie: cat, code_postal: code_postal).order(dispo: :asc)
+					where(categorie: cat, code_postal: code_postal).order(dispo: :desc)
 				else
 					Annonce.find_by_sql("
 						SELECT * 
