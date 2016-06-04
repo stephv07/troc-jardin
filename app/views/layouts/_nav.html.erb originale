@@ -1,13 +1,13 @@
 <nav class= "navbar">
 	<ul>
 		<li>
-			<%= link_to image_tag("http://stephane-vey.pagefr.com/images_jardin_pop/pom1.svg"), annonces_path %>
+			<%= link_to image_tag("pom1.svg"), annonces_path %>
 		</li>
 		<li class="menu">
 			<%= link_to 'Proposez quelque chose', new_annonce_path %>
 		</li>
 		<div class="search">
-			<li class="menu"><a href="#"><%= image_tag ("http://stephane-vey.pagefr.com/images_jardin_pop/hamburg2.svg") %><p>Recherche</p></a>
+			<li class="menu"><a href="#"><%= image_tag ("hamburg2.svg") %><p>Recherche</p></a>
 				<ul>
 					<%= form_tag '/result', :method => 'get' do %>
 						<li>

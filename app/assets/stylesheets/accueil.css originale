@@ -1,6 +1,6 @@
 
 .accueil_container{
-    background-image: url('http://stephane-vey.pagefr.com/images_jardin_pop/vergers.png');
+    background-image: url('vergers.png');
     background-size: cover;
     display: flex;
     flex-direction: column;
